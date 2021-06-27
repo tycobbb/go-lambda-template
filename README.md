@@ -53,3 +53,11 @@ $ make run
 ```
 
 you should find the output in `fixtures/output.json`.
+
+# stopping
+
+stop the localstack server
+
+```sh
+$ make f/stop
+```
