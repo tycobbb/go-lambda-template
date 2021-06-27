@@ -1,7 +1,7 @@
-go lambda template
+# go lambda template
 ---
 
-a template for a lambda fn using go, terraform, and localstack
+a template for a lambda fn using go, terraform, and localstack.
 
 # setup
 
@@ -13,13 +13,13 @@ install these in whatever way makes sense for your system. on mac, i personally 
 - [localstack](https://localstack.cloud/docs/getting-started/installation/)
 - [awscli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 
-then init the dev env
+then init the dev env.
 
 ```sh
 $ make init
 ```
 
-this template uses `make` as a task runner. to view a list of available tasks
+this template uses `make` as a task runner. view the list of available tasks.
 
 ```sh
 $ make
@@ -27,36 +27,37 @@ $ make
 
 # running
 
-to test locally, first start docker. then start the localstack server
+to run the lambda fn locally, first start docker. then start the localstack server.
 
 ```sh
-$ make f/start # wait for localstack to boot
+$ make f/start
 ```
 
-build and zip the lambda fn
+build and zip the lambda fn.
 
 ```sh
 $ make b/arch
 ```
 
-prepare the infrastructure
+prepare the infrastructure.
 
 ```sh
+# once localstack has finished starting
 $ make f/plan
 $ make f/apply
 ```
 
-and then call the function:
+and then call the function.
 
 ```sh
 $ make run
 ```
 
-you should find the output in `fixtures/output.json`.
+you should find the fn output in `fixtures/output.json`.
 
 # stopping
 
-stop the localstack server
+stop the localstack server.
 
 ```sh
 $ make f/stop

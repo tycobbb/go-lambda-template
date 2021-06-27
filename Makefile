@@ -1,5 +1,9 @@
-include .env
 include ./Makefile.base.mk
+
+# load dotenv
+ifneq (,$(wildcard ./.env))
+	include .env
+endif
 
 # -- cosmetics --
 help-colw = 7
@@ -32,7 +36,7 @@ init: i
 i: .env
 .PHONY: i
 
-.env: .env.sample
+.env:
 	cp .env.sample .env
 
 # -- build --
