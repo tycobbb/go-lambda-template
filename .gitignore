@@ -1,0 +1,13 @@
+.env
+
+# build
+build
+
+# run
+fixtures/output.json
+
+# infra
+.terraform
+*.tfstate
+*.tfstate.*
+*.tfvars

@@ -1,0 +1,7 @@
+[Makefile*]
+indent_style = tab
+indent_size = 2
+
+[{*.go,go.mod,go.sum}]
+indent_style = tab
+indent_size = 4
