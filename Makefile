@@ -10,9 +10,10 @@ help-colw = 7
 
 # -- constants --
 db-entry = cmd/main.go
-db-build = build
-db-binary = $(FN_BINARY)
-db-archive = $(FN_ARCHIVE)
+db-build = $(FN_BUILD_DIR)
+db-name = $(FN_NAME)
+db-binary = $(db-build)/$(db-name)
+db-archive = $(db-name).zip
 dr-fn = $(FN_NAME)
 dr-fixtures = fixtures
 dr-input = $(dr-fixtures)/input.json
@@ -55,7 +56,7 @@ b/clean:
 
 ## build and archive
 b/arch: b
-	zip $(db-archive) $(db-binary)
+	cd $(db-build) && zip $(db-archive) $(db-name)
 .PHONY: b/arch
 
 # -- run --
